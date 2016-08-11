@@ -1,0 +1,14 @@
+#poe-main {
+    margin-left: 12em;
+}
+
+.poe-sidebar {
+    display: block;
+    position: relative;
+    float: left;
+    width: 12em;
+    padding: 0.5em;
+    margin: 0 1em 0 0;
+    clear: both;
+    border: 1px solid #ffdcbb;
+}

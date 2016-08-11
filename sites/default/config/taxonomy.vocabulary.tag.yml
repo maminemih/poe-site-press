@@ -1,0 +1,9 @@
+uuid: 4becef25-069d-49af-89f4-35ab21682387
+langcode: en
+status: true
+dependencies: {  }
+name: Tag
+vid: tag
+description: Tags
+hierarchy: 0
+weight: 0

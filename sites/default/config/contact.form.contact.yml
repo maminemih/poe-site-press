@@ -1,0 +1,17 @@
+uuid: 48f968ba-8719-477b-87b5-cfbebe0b5b84
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact_storage
+third_party_settings:
+  contact_storage:
+    redirect_uri: ''
+    submit_text: Envoyer
+    show_preview: true
+id: contact
+label: Contact
+recipients:
+  - mamine.vls@gmail.com
+reply: ''
+weight: 0

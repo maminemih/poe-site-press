@@ -1,0 +1,6 @@
+{% if content %}
+    {{ attach_library('poet/poe-sidebar') }}
+    <aside{{ attributes.setAttribute('class', 'poe-sidebar') }}>
+        {{ content }}
+    </aside>
+{% endif %}

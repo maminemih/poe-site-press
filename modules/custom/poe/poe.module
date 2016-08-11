@@ -1,0 +1,118 @@
+<?php
+
+use \Drupal\Core\Entity\EntityInterface;
+use \Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
+/**
+ *Implements hook_entity_view().
+ *
+ * @param array $build
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ * @param \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display
+ * @param $view_mode
+ */
+function poe_entity_view(array &$build,
+                         EntityInterface $entity,
+                         EntityViewDisplayInterface $display,
+                         $view_mode)
+{
+  //N'affiche qu'une seule fois le ksm dans le cas où plusieurs entity sont rendues dans la page
+  /*static $count;
+    $count++;
+    if (1 < $count) {
+      return;
+    }*/
+
+  //A EVITER
+  /*$build['mon_element'] = [
+    '#markup' => '<div class="ma_classe">BIIIIIM</div>'
+  ];*/
+
+    ksm($display->getComponent('mon_element'));
+    if (null === $display->getComponent('mon_element')){
+        return;
+    };
+
+  /*$build['mon_element'] = [
+    '#type'       =>  'html_tag',
+    '#tag'        =>  'blockquote',
+    '#value'      =>  'HELLOWWWORLD',
+    '#weight'     =>  1000,
+    //'#access'     =>  FALSE,
+    '#attributes' =>  [
+      'class'     =>  [
+        'ma_classe', 'super', //hidden : display none
+      ],
+      'style'     => 'background-color: #ffc800;'
+    ],
+  ];*/
+
+  //drupal_set_message('Message flash !', 'warning'); //status, error, warning
+  //ksm($build);
+
+    $build['mon_element'] = [
+        '#theme'       =>  'poe_triptyque',
+        '#images'      =>   [
+            [
+                '#theme'    =>  'image',
+                '#uri'      =>  'http://www.fakenamegenerator.com/dummyimage/300x210/CCCCCC/000000/1',
+            ],
+            [
+                '#theme'    =>  'image',
+                '#uri'      =>  'http://www.fakenamegenerator.com/dummyimage/300x210/5456bd/000000/1',
+            ],
+            [
+                '#theme'    =>  'image',
+                '#uri'      =>  'http://www.fakenamegenerator.com/dummyimage/300x210/cc2828/000000/1',
+            ],
+        ],
+        '#figcaption'   =>  [
+            'Image 1',
+            'Image 2',
+            'Image 3',
+        ],
+    ];
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function poe_entity_extra_field_info()
+{
+    $extra_fields = [];
+
+    $extra_fields['node']['page']['display']['mon_element'] = [
+        'label' => t('Mon element'),
+        'description' => t('Description de mon element'),
+        'weight' => 0, //ne sert à rien, est écrasé par le pre_render
+    ];
+
+    return $extra_fields;
+}
+
+
+/**
+ * Implements hook_theme().
+ *
+ * @param $existing
+ * @param $type
+ * @param $theme
+ * @param $path
+ * @return array
+ */
+function poe_theme($existing, $type, $theme, $path)
+{
+    $themes = [];
+
+    $themes['poe_triptyque'] = [ //clé de thème
+        'variables' =>  [
+            'images'  =>  null,
+            'figcaption'  =>  null,
+        ],
+        'template' =>  'poe-triptyque',
+    ];
+
+    return $themes;
+}
+
+

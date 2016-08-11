@@ -1,0 +1,25 @@
+uuid: fc8983cb-6136-4bc1-b66a-845096f69b0a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:custom_block:55f42a5b-9782-48c3-abfd-8edd64701566'
+  module:
+    - block_content
+  theme:
+    - bartik
+id: customblockbase
+theme: bartik
+region: footer_first
+weight: -5
+provider: null
+plugin: 'block_content:55f42a5b-9782-48c3-abfd-8edd64701566'
+settings:
+  id: 'block_content:55f42a5b-9782-48c3-abfd-8edd64701566'
+  label: 'Custom Block Base'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

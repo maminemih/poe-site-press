@@ -1,0 +1,19 @@
+uuid: 7acebae8-d75e-4392-a27d-e23b2f176686
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_recommanded_articles
+field_name: field_recommanded_articles
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 5
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

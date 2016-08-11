@@ -1,0 +1,10 @@
+<div id="poe-triptyque">
+    {% for index, image in images %}
+        <figure class="triptyque-fig">
+            {{ image }}
+            <figcaption>
+                {{ figcaption[index] }}
+            </figcaption>
+        </figure>
+    {% endfor %}
+</div>

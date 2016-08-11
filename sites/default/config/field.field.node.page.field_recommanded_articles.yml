@@ -1,0 +1,28 @@
+uuid: 6c62231e-36ec-40aa-81cc-fd34807d53ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recommanded_articles
+    - node.type.article
+    - node.type.page
+id: node.page.field_recommanded_articles
+field_name: field_recommanded_articles
+entity_type: node
+bundle: page
+label: 'Articles conseillés'
+description: 'Recommanded articles (limited to 5 articles)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,14 @@
+uuid: 42706e8e-cf02-47cd-917a-78f87e25deaf
+name: 'Blog POE 2016'
+mail: admin@example.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/6
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI

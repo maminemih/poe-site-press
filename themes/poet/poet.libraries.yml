@@ -1,0 +1,5 @@
+poe-sidebar:
+  version: VERSION
+  css:
+    component:
+      css/poet.sidebar.css: {}

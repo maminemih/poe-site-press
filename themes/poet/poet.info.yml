@@ -1,0 +1,11 @@
+name: POE Theme
+type: theme
+description: 'Theme for POE 2016'
+version: 8.0
+core: 8.x
+
+regions:
+  header: Header
+  sidebar: Sidebar
+  content: Content
+  footer: Footer
